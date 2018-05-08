@@ -54,6 +54,7 @@ function build_lr-mupen64plus() {
         isPlatform "arm" && params+=(WITH_DYNAREC=arm)
         isPlatform "neon" && params+=(HAVE_NEON=1)
         isPlatform "gles" && params+=(FORCE_GLES=1)
+        isPlatform "tinker" && params+=("CPUFLAGS=-marm")
     fi
     make clean
     make "${params[@]}"
